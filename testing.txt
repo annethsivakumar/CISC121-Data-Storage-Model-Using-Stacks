@@ -1,0 +1,366 @@
+--- Suite SubClass - Test1 ---
+### Create suite. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.Suite'>, Room Number: 101, Availability: True  #Correct Output!
+
+--- Suite SubClass - Test2 ---
+### Create suites. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.Suite'>, Room Number: 101, Availability: True
+Type: <class 'hotel_classes.Suite'>, Room Number: 102, Availability: False  #Correct Output!
+
+--- Suite SubClass - Test3 ---
+### Create suites. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.Suite'>, Room Number: 101, Availability: True
+Type: <class 'hotel_classes.Suite'>, Room Number: 102, Availability: False
+Type: <class 'hotel_classes.Suite'>, Room Number: 103, Availability: True  #Correct Output!
+
+--- Suite SubClass - Test4 ---
+### Create suites, with incorrect date format. ###
+Type: <class 'hotel_classes.Suite'>, Room Number: 101, Availability: True
+Type: <class 'hotel_classes.Suite'>, Room Number: 102, Availability: False
+Type: <class 'hotel_classes.Suite'>, Room Number: 103, Availability: True
+Type: <class 'hotel_classes.Suite'>, Room Number: 104, Availability: True  #Correct Output!
+
+
+
+--- StandardRoom SubClass - Test1 ---
+### Create a standard room. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: False  #Correct Output!
+
+--- StandardRoom SubClass - Test2 ---
+### Create standard rooms. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: False
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: False  #Correct Output!
+
+--- StandardRoom SubClass - Test3 ---
+### Create standard rooms. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: False
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: False
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: True  #Correct Output!
+
+--- StandardRoom SubClass - Test4 ---
+### Create standard rooms. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: False
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: False
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: True
+Type: <class 'hotel_classes.StandardRoom'>, Room Number: 201, Availability: True  #Correct Output!
+
+
+
+--- TaylorSuite SubClass - Test1 ---
+### Create a taylor suite. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 301, Availability: True  #Correct Output!
+
+--- TaylorSuite SubClass - Test2 ---
+### Create another taylor suite. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 301, Availability: True
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 302, Availability: False  #Correct Output!
+
+--- TaylorSuite SubClass - Test3  ---
+### Create another taylor suite. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 301, Availability: True
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 302, Availability: False
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 303, Availability: True  #Correct Output!
+
+--- TaylorSuite SubClass - Test4 ---
+### Create another taylor suite. Print its type, room number and availability. ###
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 301, Availability: True
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 302, Availability: False
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 303, Availability: True
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 304, Availability: False  #Correct Output!
+
+--- TaylorSuite SubClass - Test5 ---
+### Check if error is printed when more than 14 taylor suites exits. ###
+# If it works for one, should work for all since it is all the same algorithm #
+No more taylor suites available
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 301, Availability: True
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 302, Availability: False
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 303, Availability: True
+Type: <class 'hotel_classes.TaylorSuite'>, Room Number: 304, Availability: False  #Correct Output!
+
+
+--- Guest Class - Test1 ---
+### Create a guest ###
+Name: John Smith, Check-out-date: 2023-04-05 00:00:00  #Correct Output!
+
+--- Guest Class - Test2 ---
+### Create a guest ###
+Name: John Smith, Check-out-date: 2023-04-05 00:00:00
+Name: Anneth Sivakumar, Check-out-date: 2023-04-05 00:00:00  #Correct Output!
+
+--- Guest Class - Test3 ---
+### Create a guest ###
+Name: John Smith, Check-out-date: 2023-04-05 00:00:00
+Name: Anneth Sivakumar, Check-out-date: 2023-04-05 00:00:00
+Name: Mason Petri, Check-out-date: 2023-04-05 00:00:00  #Correct Output!
+
+--- Guest Class - Test4 ---
+### Create a guest, but missing a parameter ###
+Traceback (most recent call last):
+  File "main.py", line 65, in <module>
+    guest4 = Guest('Haris Khan', datetime(2023,4,5))
+TypeError: Guest.__init__() missing 1 required positional argument: 'check_out_date'  #Correct Output!
+
+
+
+--- guest_check_in function - Test1 ---
+### User books person for a suite ###
+Room 101, Available: 2023-04-03 00:00:00
+Name: John Smith, Room 101, Available: False   ~Booked!  #Correct Output!
+
+--- guest_check_in function - Test2 ---
+### User books person for a standard room ###
+Room 101, Available: 2023-04-03 00:00:00
+Name: John Smith, Room 101, Available: False   ~Booked!
+
+Room 201, Available: 2023-03-28 00:00:00
+Name: Anneth Sivakumar, Room 201, Available: False   ~Booked!  #Correct Output!
+
+--- guest_check_in function - Test3 ---
+### User books person for a taylor suite ###
+Room 101, Available: 2023-04-03 00:00:00
+Name: John Smith, Room 101, Available: False   ~Booked!
+
+Room 201, Available: 2023-03-28 00:00:00
+Name: Anneth Sivakumar, Room 201, Available: False   ~Booked!
+
+Room 301, Available: 2023-03-28 00:00:00
+Name: Mason Petri, Room 301, Available: False   ~Booked!  #Correct Output!
+
+--- guest_check_in function - Test4 ---
+### User books person into a booked room ###
+Room 101, Available: 2023-04-03 00:00:00
+Name: John Smith, Room 101, Available: False   ~Booked!
+
+Room 201, Available: 2023-03-28 00:00:00
+Name: Anneth Sivakumar, Room 201, Available: False   ~Booked!
+
+Room 301, Available: 2023-03-28 00:00:00
+Name: Mason Petri, Room 301, Available: False   ~Booked!  Room 101, Available: 2023-04-03 00:00:00
+Name: John Smith, Room 101, Available: False   ~Booked!
+
+Room 201, Available: 2023-03-28 00:00:00
+Name: Anneth Sivakumar, Room 201, Available: False   ~Booked!
+
+Room 301, Available: 2023-03-28 00:00:00
+Name: Mason Petri, Room 301, Available: False   ~Booked!  #Correct Output!
+
+Room 101, Not Available Until: 2023-04-06 00:00:00
+
+--- guest_check_in function - Test4 ---
+### User books person into a unavailable room ###
+Room 101, Available: 2023-04-03 00:00:00
+Name: John Smith, Room 101, Available: False   ~Booked!
+
+Room 201, Available: 2023-03-28 00:00:00
+Name: Anneth Sivakumar, Room 201, Available: False   ~Booked!
+
+Room 301, Available: 2023-03-28 00:00:00
+Name: Mason Petri, Room 301, Available: False   ~Booked!
+
+Room 310, Not Available Until: 2023-03-10 00:00:00  #Correct Output!
+
+
+
+--- add_service & send_bill function - Test1 ---
+### Send bill to guest with a Suite. ###
+Bill for John Smith:
+Food: $10
+Massage: $120
+
+Total: $130  #Correct Output!
+
+--- add_service & send_bill function - Test2 ---
+### Send bill to guest with a Standard Room. ###
+Bill for John Smith:
+Food: $10
+Massage: $120
+
+Total: $130
+
+Bill for Anneth Sivakumar:
+Movie: $20
+Arcade: $220
+
+Total: $240  #Correct Output!
+
+--- add_service & send_bill function - Test3 ---
+### Send bill to guest with a Taylor Suite. ###
+Bill for John Smith:
+Food: $10
+Massage: $120
+
+Total: $130
+
+Bill for Anneth Sivakumar:
+Movie: $20
+Arcade: $220
+
+Total: $240
+
+Bill for Mason Petri:
+Movie: $40
+Massage: $150
+
+Total: $190  #Correct Output!
+
+--- add_service & send_bill function - Test4 ---
+### Add service with float value ###
+ERROR: Please Enter Integer Prices!
+ERROR: Please Enter Integer Prices!
+Bill for John Smith:
+Food: $10
+Massage: $120
+
+Total: $130
+
+Bill for Anneth Sivakumar:
+Movie: $20
+Arcade: $220
+
+Total: $240
+
+Bill for Mason Petri:
+Movie: $40
+Massage: $150
+
+Total: $190
+
+Bill for Owen Tucker:
+
+Total: $0  #Correct Output!
+
+
+
+--- Check if cleaning period is added to available date - Test1 ---
+### New available date of suite. ###
+Room: 101, New_Available_Date: 2023-04-06 00:00:00  #Correct Output!
+
+--- Check if cleaning period is added to available date - Test2 ---
+### New available of standard room. ###
+Room: 101, New_Available_Date: 2023-04-06 00:00:00
+Room: 201, New_Available_Date: 2023-04-06 00:00:00  #Correct Output!
+
+--- Check if cleaning period is added to available date - Test3 ---
+### New available of taylor suite. ###
+Room: 101, New_Available_Date: 2023-04-06 00:00:00
+Room: 201, New_Available_Date: 2023-04-06 00:00:00
+Room: 301, New_Available_Date: 2023-04-09 00:00:00  #Correct Output!
+
+
+
+
+
+--- Push Function - Test1 ---
+### Push numbers onto the stack. ###
+Orginal Stack: [10, 20, 30]
+
+--- Push Function - Test2 ---
+### Push numbers onto the stack. ###
+Original Stack: [10, 20, 30, 40, 50, 60]
+
+--- Push Function - Test3 ---
+### Push numbers onto the stack. ###
+Original Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+--- Push Function - Test4 ---
+### Push numbers and string onto the stack. ###
+Original Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A', 'b']
+
+
+
+--- Pop Function and Size Function - Test1 ---
+### Pop elements off the stack. ###
+Original Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A', 'b']
+
+Stack After Pop: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A']
+Size of Stack: 10
+
+--- Pop Function and Size Function - Test2 ---
+### Pop elements off the stack. ###
+Original Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+Stack After Pop: [10, 20, 30, 40, 50, 60, 70, 80, 90]
+Size of Stack: 9
+
+--- Pop Function and Size Function - Test3 ---
+### Pop elements off the stack. ###
+Original Stack: [10, 20, 30, 40, 50, 60, 70, 80]
+
+Stack After Pop: [10, 20, 30, 40, 50, 60, 70, 80]
+Size of Stack: 8
+
+--- Pop Function and Size Function - Test4 ---
+### Pop elements off the stack. ###
+Original Stack: [10, 20, 30, 40, 50, 60, 70. 80]
+
+Stack After Pop: [10, 20, 30, 40, 50, 60, 70]
+Size of Stack: 7
+
+--- Pop Function and Size Function - Test5 ---
+### Pop elements off an empty stack. ###
+Original Stack: []
+
+Error: Stack Is Empty!
+Stack After Pop: []
+Size of Stack: 0
+
+
+
+--- Peek Function - Test 1 ---
+### Peek at top element, without removing element from stack. ###
+Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A', 'b']
+Peek: b
+Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A', 'b']
+
+--- Peek Function - Test 2 ---
+### Peek at top element, without removing element from stack. ###
+Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A']
+Peek: A
+Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A']
+
+--- Peek Function - Test 3 ---
+### Peek at top element, without removing element from stack. ###
+Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90]
+Peek: 90
+Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+--- Peek Function - Test 4 ---
+### Peek at top element, without removing element from stack. ###
+Stack: [10, 20, 30, 40, 50, 60, 70, 80]
+Peek: 80
+Stack: [10, 20, 30, 40, 50, 60, 70, 80]
+
+--- Peek Function - Test 5 ---
+### Peek at top element of an empty list. ###
+Stack: []
+Peak: Can't Peek On Empty Stack!
+Stack: []
+
+
+
+
+--- Is_empty Function - Test1 ---
+Stack: [10, 20, 30, 40, 50, 60, 70, 80, 90, 'A']
+Is Stack Empty: False
+
+--- Is_empty Function - Test2 ---
+Stack: [10, 20, 30, 40, 50, 60, 70]
+Is Stack Empty: False
+
+--- Is_empty Function - Test3 ---
+Stack: []
+Is Stack Empty: True
+
+
+
+--- Reverse Function - Test1 ---
+Normal Stack: [10, 20, 30, 40, 50, 60, 70]
+Reverse Stack: [70, 60, 50, 40, 30, 20, 10]
+
+--- Reverse Function - Test2 ---
+Normal Stack: [70, 60, 50, 40, 30]
+Reverse Stack: [30, 40, 50, 60, 70]
+
+--- Reverse Function - Test3 ---
+Normal Stack: []
+Reverse Stack: []
